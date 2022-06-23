@@ -1,21 +1,21 @@
 package ru.deliveryClub;
 
-import org.junit.After;
-import org.junit.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WebDriverSettings {
 
-    public ChromeDriver driver;
+    public static ChromeDriver driver;
 
     @Before
-    public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "/Users/nina.belova/Downloads/chromedriver_win32/chromedriver.exe");
+    public void beforeHook() {
+        System.setProperty("webdriver.chrome.driver", "/Users/Vika/Downloads/chromedriver_win32/chromedriver.exe");
         driver = new ChromeDriver();
     }
 
     @After
-    public void close() {
+    public void afterHook() {
         driver.quit();
     }
 }
